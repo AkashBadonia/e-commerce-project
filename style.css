@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+
+.displayFlex {
+  display: flex;
+}
+.textAlignCenter {
+  text-align: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+.alignJustifyCenter {
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  padding: 2rem 1em;
+  gap: 2rem;
+}
+
+.horizontalList {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  padding: 1rem 1rem;
+}
+
+/* header section  */
+
+/* navigation bar */
+#landPageNavbar {
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.navLiItems a {
+  text-decoration: none;
+  color: white;
+}
+
+/* hero section  */
+#heroSec {
+  background-color: tomato;
+  padding: 2rem;
+}
+
+#heroSecBtn {
+  padding: 0.3rem 1.2rem;
+}
+
+/* category section  */
+.cardContainer {
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+#categorySec,
+#productSec {
+  background-color: lightgray;
+}
+.indivisulCard {
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5em;
+  background-color: white;
+}
+/* featured product section  */
+.priceCont {
+  color: #ff9481;
+}
+
+/* customer testimonial section  */
+#testimonySec {
+  background-color: #323232;
+}
+.customerCard {
+  background-color: #414141;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 30%;
+  gap: 1em;
+}
+#custTestimonyHead,
+.customerComment {
+  color: white;
+}
+#testimonySec .customerName {
+  color: #f35d45;
+}
+#testimonySec .customerComment {
+  font-style: italic;
+}
