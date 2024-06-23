@@ -100,3 +100,62 @@
 #testimonySec .customerComment {
   font-style: italic;
 }
+
+/* login form  */
+#outermostCont {
+  height: 100vh;
+  background-color: lightgray;
+}
+#loginFormMainCont {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0.2em 0.2em 0.5em black;
+}
+
+#signInFormCont form,
+#signUpFormCont form {
+  gap: 1rem;
+}
+.loginRadioBtn {
+  background-color: lightgray;
+  padding: 0.8rem 1rem;
+  margin: 1rem;
+  color: orangered;
+  cursor: pointer;
+}
+#signIn,
+#signUp {
+  margin: 2rem 0rem;
+}
+
+#signInFormCont,
+#signUpFormCont {
+  display: none;
+  margin: 1rem;
+}
+
+/* Show the appropriate form based on the radio button selection */
+#signIn:checked ~ #signInFormCont {
+  display: flex;
+}
+#signUp:checked ~ #signUpFormCont {
+  display: flex;
+}
+
+#signInFormCont input:not([type="button"]),
+#signUpFormCont input:not([type="button"]) {
+  width: 100%;
+  padding: 0.3rem;
+}
+#signInFormCont input[type="button"],
+#signUpFormCont input[type="button"] {
+  padding: 0.8rem 1rem;
+  background-color: #323232;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.altLoginOption {
+  padding: 1rem;
+}

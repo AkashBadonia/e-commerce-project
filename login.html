@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="outermostCont" class="displayFlex flexColumn alignJustifyCenter">
+      <div id="loginFormMainCont" class="textAlignCenter">
+        <input type="radio" name="loginRadio" id="signIn" checked />
+        <label for="signIn" id="signInBtn" class="loginRadioBtn">
+          Sign In
+        </label>
+        <input type="radio" name="loginRadio" id="signUp" />
+        <label for="signUp" id="signUpBtn" class="loginRadioBtn">
+          Sign Up
+        </label>
+        <div id="signInFormCont" class="bothFormCont displayFlex flexColumn">
+          <form
+            action=""
+            id="signInForm"
+            class="displayFlex flexColumn alignJustifyCenter"
+          >
+            <h2>Sign In</h2>
+            <input type="text" name="" placeholder="Username" />
+            <input type="password" name="" placeholder="Password" />
+            <input type="button" value="Sign In" />
+            <div class="altLoginOption displayFlex alignJustifyCenter">
+              <span>Don't have an account?</span>
+              
+              <span class="loginRadioBtn">Sign Up here</span>
+            </div>
+          </form>
+        </div>
+        <div id="signUpFormCont" class="bothFormCont displayFlex flexColumn">
+          <form
+            action=""
+            id="signUpForm"
+            class="displayFlex flexColumn alignJustifyCenter"
+          >
+            <h2>Sign Up</h2>
+            <input type="text" name="" placeholder="Full Name" />
+            <input type="email" name="" placeholder="Email Address" />
+            <input type="password" name="" placeholder="Password" />
+            <input type="button" value="Sign Up" />
+            <div class="altLoginOption displayFlex alignJustifyCenter">
+              <span>Already have an account?</span>
+              <span class="loginRadioBtn">Sign in here</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="sc"></script>
+  </body>
+</html>
