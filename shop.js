@@ -40,12 +40,14 @@ async function getAllProducts() {
 
   let cartItemsIds = getCartItems();
   console.log(cartItemsIds);
-  cartItemsIds.forEach((cartItemId) => {
-    const cartItem = document.querySelector(`[data-id="${cartItemId}"]`);
-    const cartBtn = cartItem.querySelector(".addToCartBtn");
-    cartBtn.innerHTML = `Remove <i class="fa-solid fa-trash"></i>`;
-    cartBtn.classList.add("addedToCart");
-  });
+  if (cartItemsIds) {
+    cartItemsIds.forEach((cartItemId) => {
+      const cartItem = document.querySelector(`[data-id="${cartItemId}"]`);
+      const cartBtn = cartItem.querySelector(".addToCartBtn");
+      cartBtn.innerHTML = `Remove <i class="fa-solid fa-trash"></i>`;
+      cartBtn.classList.add("addedToCart");
+    });
+  }
 
   // adding event listener to add to cart button
   const addToCartBtns = document.querySelectorAll(".addToCartBtn");
