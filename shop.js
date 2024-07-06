@@ -39,7 +39,6 @@ async function getAllProducts() {
   });
 
   let cartItemsIds = getCartItems();
-  console.log(cartItemsIds);
   if (cartItemsIds) {
     cartItemsIds.forEach((cartItemId) => {
       const cartItem = document.querySelector(`[data-id="${cartItemId}"]`);
