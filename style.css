@@ -57,10 +57,27 @@
   background-color: tomato;
   padding: 2rem;
 }
-
+@keyframes heroSecAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Animation to hero section  */
+#heroSec #heroSecHead,
+#heroSec #heroSecPara {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: heroSecAnimation 1s ease 0.1s;
+}
+#heroSecHead,
+#heroSecPara {
+  color: white;
+}
 #heroSecBtn {
   background-color: black;
-  padding: 0.3rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   color: white;
   border: none;
   transition: all ease 0.2s;
@@ -79,6 +96,7 @@
 }
 
 /* category section  */
+
 .cardContainer {
   justify-content: center;
   gap: 1.5rem;
@@ -88,10 +106,28 @@
 #productSec {
   background-color: lightgray;
 }
+@keyframes cardsAnimation {
+  from {
+    transform: translateY(3em);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0em);
+    opacity: 1;
+  }
+}
+/* adding animation to all cards  */
 .indivisulCard {
+  animation: cardsAnimation 1s ease 0.1s;
+  box-shadow: 0.1em 0.1em 0.1em gray;
   padding: 0.5rem 0.5rem;
   border-radius: 0.5em;
   background-color: white;
+  transition: transform ease 0.4s;
+}
+.indivisulCard:hover {
+  transform: scale(1.1);
+  box-shadow: 0.2em 0.2em 0.2em gray;
 }
 /* featured product section  */
 .priceCont {
@@ -193,6 +229,4 @@ thead {
   padding: 1rem;
 }
 
-@media screen  {
-  
-}
+

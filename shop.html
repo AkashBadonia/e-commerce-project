@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link rel="stylesheet" href="shop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="topHeadSec" id="shopHeader">
+      <h1 id="shopHeading">Products</h1>
+      <a href="./cart.html">Go to cart</a>
+    </header>
+    <div id="mainAsideCont" class="displayFlex">
+      <aside id="shopAside">
+        <h3 id="filters">Filters</h3>
+        <div id="categHead">Categories <i class="fa-solid fa-caret-down"></i></div>
+        <div id="categFilterCont"></div>
+      </aside>
+      <main id="shopMain">
+        <div id="cardsContainer" class="container displayFlex alignJustifyCenter"></div>
+      </main>
+    </div>
+    <script type="module" src="shop.js"></script>
+  </body>
+</html>
