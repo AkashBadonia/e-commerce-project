@@ -16,11 +16,13 @@ function createCard(data) {
   img.classList.add("cartProductImg");
   imageCont.classList.add("cartProImgCont");
   productName.classList.add("productName");
+  productPrice.classList.add("productPrice");
   removeBtn.classList.add("removeFromCartBtn");
   productName.textContent = data.title;
   productPrice.textContent = `$${data.price}`;
   noOfItems.type = "number";
   noOfItems.value = "1";
+  noOfItems.classList.add("noItems");
   removeBtn.textContent = "Remove";
 
   imageCont.appendChild(img);
