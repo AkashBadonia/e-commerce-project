@@ -1,5 +1,7 @@
-const cart = "cart_key";
+const cartKey = "cart_key";
 
-export function getCartItems() {
-  return JSON.parse(localStorage.getItem(cart));
+function getCartItems() {
+  return JSON.parse(localStorage.getItem(cartKey));
 }
+
+export { getCartItems, cartKey };

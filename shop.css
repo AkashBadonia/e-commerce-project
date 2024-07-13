@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   color: #333;
 }
 .displayFlex {
@@ -17,27 +19,62 @@
   align-items: center;
   justify-content: center;
 }
+body {
+  background-color: #f1f3f6;
+}
 .container {
-  padding: 2rem 1em;
   gap: 2rem;
 }
 /* Product page css  */
-#shopHeading {
+#shopHeader {
   text-align: center;
+  background-color: #333;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#shopHeader a {
+  color: white;
+  text-decoration: none;
+}
+#shopHeader nav {
+  display: flex;
+  gap: 1rem;
+}
+#shopHeading {
+  color: white;
+}
+#mainAsideCont {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  justify-content: center;
 }
 #shopAside {
+  position: relative;
   width: 25%;
+  background-color: white;
+  padding: 1em;
+}
+#shopAside > div {
+  position: sticky;
+  top: 1rem;
 }
 #shopMain {
   width: 75%;
+  background-color: white;
+  padding: 1em;
 }
 #categHead {
   cursor: pointer;
+  padding: 0.3em 0;
 }
 .categCont {
   display: flex;
   width: fit-content;
   align-items: flex-start;
+  gap: 0.1em;
 }
 .categCont input,
 .categCont label {
@@ -45,6 +82,8 @@
 }
 #categFilterCont {
   display: none;
+  gap: 0.3em;
+  padding: 0.2em;
 }
 .active {
   display: flex !important;
@@ -55,7 +94,9 @@
   gap: 1rem;
 }
 .productCard {
-  width: 12rem;
+  min-width: 10rem;
+  max-width: 14rem;
+  flex: 1 100% 1;
   border: 2px solid gray;
   padding: 0.3em;
   border-radius: 0.5rem;
@@ -83,15 +124,51 @@
 .productDesc {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
   font-size: small;
   line-height: 1.2em;
-  height: calc(1.2em * 4);
-  max-height: calc(1.2em * 4);
+  height: calc(1.2em * 2);
+  max-height: calc(1.2em * 2);
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
   /* white-space: nowrap; */
+}
+.ratingCont {
+  background-color: green;
+  width: fit-content;
+  color: white;
+  padding: 0.1em;
+  border-radius: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ratingCont div {
+  padding: 0.2em;
+  font-size: 0.7rem;
+  color: white;
+}
+.ratingCont div i {
+  color: white;
+  font-size: 0.6rem;
+  transform: translateY(-10%);
+}
+.productPriceCont {
+  gap: 0.5em;
+  align-items: center;
+}
+.sellingPrice {
+  font-weight: bold;
+}
+.mrp {
+  text-decoration: line-through;
+  color: gray;
+  font-size: smaller;
+}
+.discount {
+  color: green;
+  font-size: smaller;
 }
 .addToCartBtn {
   background-color: #333;

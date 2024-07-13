@@ -6,16 +6,15 @@ import { getCartItems } from "./localStoCartItem.js";
 const categFilterCont = document.getElementById("categFilterCont");
 const categHeadEl = document.getElementById("categHead");
 
-const cart = "cart_key";
-
 document.addEventListener("DOMContentLoaded", () => {});
 async function getAllProducts() {
   const data = await getProducts();
-  console.log(data);
+  // console.log(data);
   data.forEach((product) => {
     createCard(product);
   });
 
+  const productCardArr = Array.from(document.querySelectorAll(".productCard"));
   // get categories list and creating the list
   const categories = getCategoriesList(data);
   createCategList(categories, categFilterCont);
@@ -30,45 +29,35 @@ async function getAllProducts() {
   categFilterCont.addEventListener("click", (event) => {
     if (event.target.tagName === "INPUT" && event.target.type === "checkbox") {
       checked = categFilterCont.querySelectorAll(`input[type="checkbox"]:checked`);
-      console.log(checked);
+      // console.log(checked);
       if (checked && checked.length > 0) {
         selectedCateg = Array.from(checked).map((inputEl) => inputEl.id);
         console.log(selectedCateg);
+        productCardArr.forEach((card) => {
+          card.style.display = "none";
+        });
+        const filteredArr = productCardArr.filter((product) => {
+          return selectedCateg.some((category) => {
+            return product.getAttribute("data-category") == category;
+          });
+        });
+        filteredArr.forEach((card) => (card.style.display = "flex"));
+      } else {
+        productCardArr.forEach((card) => (card.style.display = "flex"));
       }
     }
   });
 
-  let cartItemsIds = getCartItems();
-  if (cartItemsIds) {
-    cartItemsIds.forEach((cartItemId) => {
-      const cartItem = document.querySelector(`[data-id="${cartItemId}"]`);
+  // updating add to cart buttons on document load from local storage.
+  let cartItems = getCartItems();
+  if (cartItems) {
+    cartItems.forEach((item) => {
+      const cartItem = document.querySelector(`[data-id="${item.id}"]`);
       const cartBtn = cartItem.querySelector(".addToCartBtn");
       cartBtn.innerHTML = `Remove <i class="fa-solid fa-trash"></i>`;
       cartBtn.classList.add("addedToCart");
     });
   }
-
-  // adding event listener to add to cart button
-  const addToCartBtns = document.querySelectorAll(".addToCartBtn");
-  let cartItems = getCartItems() || [];
-  console.log(cartItems);
-  addToCartBtns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      btn.classList.toggle("addedToCart");
-      const cardId = btn.parentElement.getAttribute("data-id");
-      if (cardId && !cartItems.includes(cardId)) {
-        btn.innerHTML = `Remove <i class="fa-solid fa-trash"></i>`;
-        cartItems.push(cardId);
-        console.log(cartItems);
-        localStorage.setItem(cart, JSON.stringify(cartItems));
-      } else if (cardId && cartItems.includes(cardId)) {
-        cartItems.splice(cartItems.indexOf(cardId), 1);
-        console.log(cartItems);
-        localStorage.setItem(cart, JSON.stringify(cartItems));
-        btn.textContent = "Add to cart";
-      }
-    });
-  });
 }
 
 getAllProducts();
